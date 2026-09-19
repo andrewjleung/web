@@ -1,0 +1,43 @@
+---
+import {
+    Breadcrumb,
+    BreadcrumbItem,
+    BreadcrumbLink,
+    BreadcrumbList,
+    BreadcrumbSeparator,
+} from "./ui/breadcrumb";
+
+const toTitleCase = (title: string): string => {
+    return title.charAt(0).toUpperCase() + title.substring(1);
+};
+
+const pathElements = Astro.url.pathname.split("/").filter(Boolean).slice(0, -1);
+
+const paths = pathElements.map(
+    (path, i) =>
+        [
+            toTitleCase(path),
+            `/${pathElements.slice(0, i + 1).join("/")}`,
+        ] as const,
+);
+---
+
+{Astro.url.pathname !== "/" && <Breadcrumb className="mb-4">
+    <BreadcrumbList className="text-lg sm:text-sm">
+        <BreadcrumbItem>
+            <BreadcrumbLink href="/">
+                Home
+            </BreadcrumbLink>
+        </BreadcrumbItem>
+
+        {paths.map(([tail, href]) => (
+        <BreadcrumbSeparator/>
+
+        <BreadcrumbItem>
+            <BreadcrumbLink href={href}>
+                {tail}
+            </BreadcrumbLink>
+        </BreadcrumbItem>
+        ))}
+    </BreadcrumbList>
+</Breadcrumb>}
