@@ -43,7 +43,7 @@ const DIRECTORY: DirectoryItem[] = [
 ---
 
 <Layout>
-    <section id="directory" class="animate-fade-in-up w-full">
+    <section id="directory" class="w-full">
         <VerticalSpotlightList numItems={DIRECTORY.length} client:load>
             {DIRECTORY.map(w =>(
                 <VerticalSpotlightListItem className="group not-last:mb-0.5">

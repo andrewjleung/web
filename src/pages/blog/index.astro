@@ -27,7 +27,7 @@ const blogPosts = (await getCollection("blog"))
         {blogPosts.map(post => (
         <a
             href={`/blog/${post.id}`}
-            class="group flex-row group ease-out duration-200 sm:hover:translate-x-2 border-t py-2 animate-fade-in-up-1"
+            class="group flex-row group ease-out duration-200 sm:hover:translate-x-2 border-t py-2"
         >
             <h3 class="">{post.data.title}</h3>
 

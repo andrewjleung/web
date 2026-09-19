@@ -46,7 +46,7 @@ const WORK_ITEMS: LinkItem[] = [
 ---
 
 <Layout title="Andrew Leung – Work">
-    <section id="work-history" class="animate-fade-in-up">
+    <section id="work-history" class="">
         <VerticalSpotlightList numItems={WORK_ITEMS.length} client:load>
             {WORK_ITEMS.map(w =>(
                 <VerticalSpotlightListItem key={`work-item-${w.name.toLowerCase()}`} className="group not-last:mb-0.5">

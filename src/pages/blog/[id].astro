@@ -27,13 +27,11 @@ const formattedDate = formatDistanceToNowStrict(post.data.publishDate, {
     pageTitle={post.data.title}
     showHeader
 >
-    <div
-        class="font-normal text-muted-foreground text-sm -mt-4 animate-fade-in-up"
-    >
+    <div class="font-normal text-muted-foreground text-sm -mt-4">
         {formattedDate}
     </div>
 
-    <article class="animate-fade-in-up-1 prose-lg">
+    <article class="prose-lg">
         <Content />
     </article>
 </Layout>
