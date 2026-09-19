@@ -1,8 +1,8 @@
 // @ts-check
 
+import cloudflare from "@astrojs/cloudflare";
 import markdoc from "@astrojs/markdoc";
 import react from "@astrojs/react";
-import vercelAdapter from "@astrojs/vercel";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig, fontProviders } from "astro/config";
 
@@ -21,7 +21,7 @@ export default defineConfig({
         "/linkedin": "https://linkedin.com/in/andrewjleung-",
     },
 
-    adapter: vercelAdapter(),
+    adapter: cloudflare(),
 
     fonts: [
         {
@@ -33,4 +33,3 @@ export default defineConfig({
         },
     ],
 });
-
