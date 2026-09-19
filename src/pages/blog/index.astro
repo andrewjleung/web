@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import { compareDesc, formatDistanceToNowStrict } from "date-fns";
 import { ArrowRight } from "lucide-react";
-import Layout from "../../layouts/layout.astro";
+import Layout from "../../layouts/Layout.astro";
 
 const blogPosts = (await getCollection("blog"))
     .filter((post) => post.data.live)
