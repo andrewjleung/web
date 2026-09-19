@@ -3,7 +3,9 @@ import { useGSAP } from "@gsap/react";
 import { useState, type MouseEventHandler, type RefObject } from "react";
 import clsx from "clsx";
 
-gsap.registerPlugin(useGSAP);
+if (typeof window !== "undefined") {
+    gsap.registerPlugin(useGSAP);
+}
 
 const MAX_PERCENTAGE = 100;
 const DEFAULT_ANIMATION_DURATION = 0.1;
